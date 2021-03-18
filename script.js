@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         request.open("POST", "https://60376bfd5435040017722533.mockapi.io/form");
         request.send(formData);
         request.onload = () => {
-            if (request.status == 201)
+            if (request.status == 201 || request.status == 200)
                 alert(JSON.parse(request.response).text)
             else {
                 alert('Ошибка: ' + request.status + '\n' + request.statusText + '\n' + request.responseText);
